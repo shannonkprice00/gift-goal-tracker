@@ -8,8 +8,8 @@ const resolvers = {
     },
 
     Mutation: {
-        addDonation: async (parent, { amount }) => {
-            const newDonation = await Donation.create({ amount });
+        addDonation: async (parent, { amount, donor }) => {
+            const newDonation = await Donation.create({ amount, donor });
             return newDonation;
         }
     }

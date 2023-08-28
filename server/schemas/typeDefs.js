@@ -3,7 +3,9 @@ const { gql } = require("apollo-server-express");
 const typeDefs = gql`
   type Donation {
     _id: ID
-    amount: Int
+    amount: Int!
+    donor: String!
+    date: String!
   }
   
   type Query {
@@ -11,7 +13,7 @@ const typeDefs = gql`
   }
   
   type Mutation {
-    addDonation(amount: Int!): Donation
+    addDonation(amount: Int!, donor: String!): Donation
   }
   `
 

@@ -16,6 +16,13 @@
   },
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "bugs": {
     "url": "https://github.com/shannonkprice00/gift-goal-tracker/issues"
   },
