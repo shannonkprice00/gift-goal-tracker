@@ -1,0 +1,23 @@
+{
+  "name": "gift-goal-tracker",
+  "version": "1.0.0",
+  "description": "web app to track gifts and progress towards gift goal",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server --ignore client",
+    "develop": "concurrently \"cd server && npm run start\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shannonkprice00/gift-goal-tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shannonkprice00/gift-goal-tracker/issues"
+  },
+  "homepage": "https://github.com/shannonkprice00/gift-goal-tracker#readme"
+}
