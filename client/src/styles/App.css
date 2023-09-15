@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;;
+    background-image: url("../../public/background-photo.jpg");
+    background-size: cover;
+}
+nav {
+    margin: 0;
+    padding: 0;
+}
