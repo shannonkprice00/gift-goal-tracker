@@ -1,9 +1,10 @@
 import React from 'react';
+import Welcome from '../components';
 
 const Home = () => {
     return (
-        <main>
-            <div>Welcome!</div>
+        <main className='d-flex'>
+            <Welcome/>
         </main>
     )
 };
