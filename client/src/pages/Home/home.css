@@ -1,3 +1,28 @@
+.thermometer-container {
+    width: 150px; /* Adjust width as needed */
+    position: relative;
+  }
+  
+  .thermometer {
+    background-color: #ccc;
+    width: 30px;
+    height: 300px; /* Adjust height as needed */
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .mercury {
+    background-color: #3498db; /* Color for the "mercury" */
+    height: 0;
+    transition: height 1s ease; /* Add a smooth animation effect */
+  }
+  
+  .goal {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+
 .centered-card {
     display: flex;
     justify-content: center;
