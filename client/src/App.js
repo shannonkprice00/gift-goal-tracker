@@ -7,6 +7,8 @@ import {
 } from "@apollo/client";
 import "./styles/App.css"
 import Home from "./pages/Home";
+import DonateForm from "./pages/DonateForm";
+
 const client = new ApolloClient({
   uri: '/graphql',
   cache: new InMemoryCache(),
@@ -18,6 +20,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/donateForm" element={<DonateForm />} />
       </Routes>
     </Router>
    </ApolloProvider>

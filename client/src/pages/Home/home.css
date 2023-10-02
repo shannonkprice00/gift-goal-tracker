@@ -16,3 +16,9 @@
 .centered-card .center-button a.btn:hover {
     background-color: rgb(102, 216, 178);
 }
+
+#welcomeCardTitle {
+    font-weight: 600;
+    font-size: 1.25rem;
+    text-align: center;
+}
