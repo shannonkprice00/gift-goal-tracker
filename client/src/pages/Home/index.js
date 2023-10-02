@@ -1,11 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Thermometer from "../../components/Thermometer";
 import "./home.css";
-import { ApolloLink } from "@apollo/client";
+
+const goalAmount = 4000;
 
 const Home = () => {
   return (
     <main className="d-flex">
+    <Thermometer goalAmount={goalAmount} />
       <div className="container centered-card">
         <div className="card">
           <div className="card-header" id="welcomeCardTitle">
