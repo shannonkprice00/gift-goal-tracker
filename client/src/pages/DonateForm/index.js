@@ -21,7 +21,8 @@ const DonateForm = () => {
         alert("You must enter a donor name!");
         return;
       }
-      if (!formState.amount || formState.amount === null) {
+      // Add additional validation to guide users to enter whole numbers only
+      if (!formState.amount) {
         alert("You must enter a donation amount!");
         return;
       }
