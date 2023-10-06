@@ -5,7 +5,7 @@ import {
   InMemoryCache,
   ApolloProvider
 } from "@apollo/client";
-import "./styles/App.css"
+import "./App.css"
 import Home from "./pages/Home";
 import DonateForm from "./pages/DonateForm";
 

@@ -3,10 +3,11 @@ import { QUERY_DONATIONS } from "../../utils/queries";
 import { useQuery } from "@apollo/client";
 import "./thermometer.css";
 
-function Thermometer({ goalAmount }) {
+function Thermometer() {
   const [mercuryHeight, setMercuryHeight] = useState(0);
   const [collectedAmount, setCollectedAmount] = useState(0);
   const MAX_HEIGHT = 500;
+  const goalAmount = 4500;
   const { loading, data } = useQuery(QUERY_DONATIONS);
 
   useEffect(() => {
