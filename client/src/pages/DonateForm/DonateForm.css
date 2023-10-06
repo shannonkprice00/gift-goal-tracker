@@ -1,0 +1,13 @@
+.donationFormBtn {
+    width: 30%;
+    margin-right: 5%;
+}
+
+.successMessage {
+    background-color: rgb(47, 104, 85);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}

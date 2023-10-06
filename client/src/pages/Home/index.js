@@ -3,12 +3,10 @@ import { Link } from "react-router-dom";
 import Thermometer from "../../components/Thermometer";
 import "./home.css";
 
-const goalAmount = 4500;
-
 const Home = () => {
   return (
     <main className="d-flex">
-    <Thermometer goalAmount={goalAmount} />
+    <Thermometer />
       <div className="container centered-card">
         <div className="card">
           <div className="card-header" id="welcomeCardTitle">
