@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Thermometer from "../../components/Thermometer";
 import "./home.css";
 
-const goalAmount = 4000;
+const goalAmount = 4500;
 
 const Home = () => {
   return (

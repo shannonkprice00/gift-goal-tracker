@@ -1,0 +1,35 @@
+.thermometer-container {
+    width: 150px; /* Adjust width as needed */
+    position: relative;
+    margin: 5% 0% 5% 5%; 
+  }
+  
+  .thermometer {
+    background-color: #f0eeee;
+    width: 50px;
+    height: 500px; /* Adjust height as needed */
+    margin: 0 auto;
+    position: relative;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+  .mercury {
+    background-color: rgb(87, 195, 159); /* Color for the "mercury" */
+    height: 0;
+    transition: height 1s ease; /* Add a smooth animation effect */
+    border-radius: 20px;
+  }
+  
+  .goal {
+    text-align: center;
+    margin-bottom: 10px;
+    color: whitesmoke;
+  }
+
+  .collected {
+    text-align: center;
+    margin-top: 10px;
+    color: whitesmoke;
+  }
