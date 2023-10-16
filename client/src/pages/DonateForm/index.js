@@ -26,15 +26,21 @@ const DonateForm = () => {
         alert("You must enter a donation amount!");
         return;
       }
-      const { data } = addDonation({
-        variables: { ...formState },
-      });
+      if (
+        window.confirm(
+          "Please ensure all information is correct before submitting your donation information...This cannot be undone!!!"
+        )
+      ) {
+        const { data } = addDonation({
+          variables: { ...formState },
+        });
+        setFormState({
+          donor: "",
+          amount: "",
+        });
+        setSuccessMessage("Thank you!!! Donation logged successfully!");
+      }
 
-      setFormState({
-        donor: "",
-        amount: "",
-      });
-      setSuccessMessage("Thank you!!! Donation logged successfully!");
       // figure out how to re-render the thermometer to update on submit without refreshing the page?
     } catch (err) {
       console.error(err);
