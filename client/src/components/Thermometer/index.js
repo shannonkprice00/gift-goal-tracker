@@ -24,16 +24,18 @@ function Thermometer() {
     }
   }, [loading, data]);
 
+  
   useEffect(() => {
     // Calculate the percentage of collectedAmount relative to goalAmount
     const percentage = (collectedAmount / goalAmount) * 100;
-
     // Calculate the height of the "mercury" element based on the percentage
     const newMercuryHeight = (percentage / 100) * MAX_HEIGHT; // Adjust as needed
 
     // Update the "mercury" height in the component's state
     setMercuryHeight(newMercuryHeight);
   }, [collectedAmount, goalAmount]);
+
+
 
   return (
     <div className="thermometer-container">
