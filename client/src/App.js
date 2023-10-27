@@ -8,6 +8,7 @@ import {
 import "./App.css"
 import Home from "./pages/Home";
 import DonateForm from "./pages/DonateForm";
+import { DonationProvider } from "./pages/DonationContext";
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -17,12 +18,14 @@ const client = new ApolloClient({
 function App() {
   return (
    <ApolloProvider client={client}>
+    <DonationProvider>
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/donateForm" element={<DonateForm />} />
       </Routes>
     </Router>
+    </DonationProvider>
    </ApolloProvider>
   );
 }

@@ -4,9 +4,11 @@ import { useMutation } from "@apollo/client";
 import { ADD_DONATION } from "../../utils/mutations";
 import Thermometer from "../../components/Thermometer";
 import { Alert } from "react-bootstrap";
+import { useDonationContext } from '../DonationContext';
 
 const DonateForm = () => {
   const [addDonation, { error }] = useMutation(ADD_DONATION);
+  const { updateCollectedAmount } = useDonationContext();
   const [successMessage, setSuccessMessage] = useState("");
   const [formState, setFormState] = useState({
     donor: "",
@@ -34,6 +36,7 @@ const DonateForm = () => {
         const { data } = addDonation({
           variables: { ...formState },
         });
+        updateCollectedAmount(parseInt(formState.amount, 10));
         setFormState({
           donor: "",
           amount: "",
@@ -53,14 +56,14 @@ const DonateForm = () => {
     if (name === "donor") {
       setFormState({ ...formState, [name]: value });
     } else if (name === "amount") {
-      const intValue = parseInt(value, 10);
+      const intValue = value === "" || isNaN(value) ? "" : parseInt(value, 10);
       setFormState({ ...formState, [name]: intValue });
     }
   };
 
   return (
     <main className="d-flex">
-      <Thermometer />
+      <Thermometer/>
       <div className="container centered-card">
         <div className="card">
           <div className="card-header" id="welcomeCardTitle">

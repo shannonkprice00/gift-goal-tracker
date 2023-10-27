@@ -1,14 +1,14 @@
 .thermometer-container {
     width: 150px; /* Adjust width as needed */
     position: relative;
-    margin: 5% 0% 5% 5%; 
+    margin: 5% 0% 0% 10%; 
   }
   
   .thermometer {
     background-color: #f0eeee;
     width: 50px;
     height: 500px; /* Adjust height as needed */
-    margin: 0 auto;
+    margin: 10% auto;
     position: relative;
     border-radius: 20px;
     display: flex;
