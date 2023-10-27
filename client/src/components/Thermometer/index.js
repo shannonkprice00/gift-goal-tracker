@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { QUERY_DONATIONS } from "../../utils/queries";
 import { useQuery } from "@apollo/client";
+import { useDonationContext } from "../../pages/DonationContext";
 import "./thermometer.css";
 
 function Thermometer() {
   const [mercuryHeight, setMercuryHeight] = useState(0);
-  const [collectedAmount, setCollectedAmount] = useState(0);
+  const { collectedAmount, updateCollectedAmount } = useDonationContext();
   const MAX_HEIGHT = 500;
   const goalAmount = 4500;
   const { loading, data } = useQuery(QUERY_DONATIONS);
+  const [isInitialRender, setIsInitialRender] = useState(true);
 
   useEffect(() => {
     // Check if data has loaded and is not in the loading state
@@ -20,11 +22,13 @@ function Thermometer() {
       );
 
       // Set the collectedAmount state with the calculated sum
-      setCollectedAmount(totalDonationAmount);
+      if (totalDonationAmount !== collectedAmount && isInitialRender) {
+        updateCollectedAmount(totalDonationAmount);
+        setIsInitialRender(false);
+      }
     }
-  }, [loading, data]);
+  },  [loading, data, updateCollectedAmount, collectedAmount]);
 
-  
   useEffect(() => {
     // Calculate the percentage of collectedAmount relative to goalAmount
     const percentage = (collectedAmount / goalAmount) * 100;
@@ -34,8 +38,6 @@ function Thermometer() {
     // Update the "mercury" height in the component's state
     setMercuryHeight(newMercuryHeight);
   }, [collectedAmount, goalAmount]);
-
-
 
   return (
     <div className="thermometer-container">

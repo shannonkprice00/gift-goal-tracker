@@ -1,5 +1,6 @@
 .donationFormBtn {
     width: 30%;
+    min-width: fit-content;
     margin-right: 5%;
 }
 

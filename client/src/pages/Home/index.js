@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Thermometer from "../../components/Thermometer";
+import { DonationProvider } from "../DonationContext";
 import "./home.css";
 
 const Home = () => {
-  return (
+    return (
+      <DonationProvider>
     <main className="d-flex">
     <Thermometer />
       <div className="container centered-card">
@@ -29,6 +31,7 @@ const Home = () => {
         </div>
       </div>
     </main>
+    </DonationProvider>
   );
 };
 
